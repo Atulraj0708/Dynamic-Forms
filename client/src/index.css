@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+
+body {
+  @apply bg-gray-100; /* Apply a light gray background to the body */
+  @apply min-h-screen; /* Ensure body fills at least the height of the screen */
+}
+@tailwind utilities;
