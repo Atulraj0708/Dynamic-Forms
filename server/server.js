@@ -33,9 +33,9 @@ db.connect((err) => {
 const credentials = JSON.parse(fs.readFileSync("credentials.json"));
 const scopes = ["https://www.googleapis.com/auth/spreadsheets"];
 const client = new google.auth.JWT(
-  credentials.client_email,
+  process.env.client_email,
   null,
-  credentials.private_key,
+  process.env.private_key,
   scopes
 );
 
