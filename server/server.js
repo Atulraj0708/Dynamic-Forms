@@ -19,7 +19,7 @@ const db = mysql.createConnection({
   host: process.env.host,
   user: process.env.user, 
   password: process.env.password, 
-  database: "dynamic_forms",
+  database: process.env.database,
 });
 
 db.connect((err) => {
