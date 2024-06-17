@@ -5,7 +5,6 @@ const ListingScreen = () => {
   const [formData, setFormData] = useState([]);
 
   useEffect(() => {
-    // Fetch data from MySQL database
     axios.get(`${process.env.REACT_APP_SERVER_LINK}/forms`)
       .then(response => {
         setFormData(response.data);

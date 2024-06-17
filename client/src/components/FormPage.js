@@ -36,8 +36,8 @@ const FormPage = () => {
     let formErrors = {};
     if (!name.trim()) {
       formErrors.name = "Name is required";
-    } else if (!name.match(/^[A-Za-z]+$/)) {
-      formErrors.name = "Name must contain only alphabetic characters";
+    } else if (!name.match(/^[A-Za-z\s]+$/)) {
+      formErrors.name = "Name must contain only alphabetic characters and spaces";
     }
 
     if (!countryCode) {
@@ -137,7 +137,9 @@ const FormPage = () => {
             Please correct the following errors:
           </span>
           <ul className="list-disc ml-5 mt-2">
-            {errors.name && <li className="text-sm">{errors.name}</li>}
+            {errors.name && (
+              <li className="text-sm">{errors.name}</li>
+            )}
             {errors.countryCode && (
               <li className="text-sm">{errors.countryCode}</li>
             )}
